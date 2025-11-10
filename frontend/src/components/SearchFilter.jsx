@@ -19,7 +19,7 @@ export default function SearchFilter({ onFilter }) {
       <select
         value={role}
         onChange={(e) => setRole(e.target.value)}
-        className="p-2 border rounded-lg flex-1"
+        className="p-3 border rounded-lg flex-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         <option value="">All Roles</option>
         <option>Frontend</option>
@@ -32,19 +32,19 @@ export default function SearchFilter({ onFilter }) {
         value={tech}
         onChange={(e) => setTech(e.target.value)}
         placeholder="Search tech (e.g. React)"
-        className="p-2 border rounded-lg flex-1"
+        className="p-3 border rounded-lg flex-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
       />
 
       <button
         onClick={handleFilter}
-        className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700"
+        className="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition focus:outline-none focus:ring-2 focus:ring-green-500"
       >
         Filter
       </button>
 
       <button
         onClick={handleClear}
-        className="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600"
+        className="bg-gray-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-600 transition focus:outline-none focus:ring-2 focus:ring-gray-500"
       >
         Clear
       </button>

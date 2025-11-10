@@ -59,7 +59,7 @@ export default function DeveloperForm({ onAdd }) {
           className="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         >
           <option value="">Select Role</option>
-          <option>Fronend</option>
+          <option>Frontend</option>
           <option>Backend</option>
           <option>Full-Stack</option>
         </select>

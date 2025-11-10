@@ -52,7 +52,9 @@ function App() {
           <div className="lg:col-span-2">
             <SearchFilter onFilter={handleFilter} />
             {loading ? (
-              <p className="text-center text-gray-500 mt-8">Loading...</p>
+              <div className="flex justify-center items-center mt-8">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+              </div>
             ) : (
               <DeveloperList developers={filtered} />
             )}
