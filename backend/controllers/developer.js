@@ -8,6 +8,14 @@ export const createDeveloper = async (req, res) => {
       return res.status(400).json({ message: 'All fields are required' });
     }
 
+    if (!['Frontend', 'Backend', 'Full-Stack'].includes(role)) {
+      return res.status(400).json({ message: 'Invalid role' });
+    }
+
+    if (isNaN(experience) || experience < 0) {
+      return res.status(400).json({ message: 'Experience must be a non-negative number' });
+    }
+
     const techArray = techStack.split(',').map(t => t.trim()).filter(t => t);
     if (techArray.length === 0) {
       return res.status(400).json({ message: 'At least one tech is required' });
