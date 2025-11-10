@@ -1,0 +1,22 @@
+# Build
+dist/
+build/
+
+# Dependencies
+node_modules/
+
+# Vite
+.vite/
+*.local
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Editor
+.vscode/
+.idea/
+
+# System
+.DS_Store
