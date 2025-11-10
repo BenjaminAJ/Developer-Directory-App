@@ -22,9 +22,9 @@ export default function SearchFilter({ onFilter }) {
         className="p-3 border rounded-lg flex-1 focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
         <option value="">All Roles</option>
-        <option>Frontend</option>
-        <option>Backend</option>
-        <option>Full-Stack</option>
+        <option value="Frontend">Frontend</option>
+        <option value="Backend">Backend</option>
+        <option value="Full-Stack">Full-Stack</option>
       </select>
 
       <input
