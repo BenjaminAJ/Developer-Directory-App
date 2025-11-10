@@ -4,7 +4,7 @@ import DeveloperList from './components/DeveloperList';
 import SearchFilter from './components/SearchFilter';
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/api/developers';
+const API_URL = import.meta.env.VITE_API_BASEURL;
 
 function App() {
   const [developers, setDevelopers] = useState([]);
