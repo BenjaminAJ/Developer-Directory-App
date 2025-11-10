@@ -5,7 +5,7 @@ export default function SearchFilter({ onFilter }) {
   const [tech, setTech] = useState('');
 
   const handleFilter = () => {
-    onFilter({ role: role || undefined, tech: tech || undefined });
+    onFilter({ role: role || "", tech: tech || "" });
   };
 
   const handleClear = () => {
