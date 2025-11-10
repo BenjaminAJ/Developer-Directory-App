@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const developerSchema = new mongoose.Schema({
   name: {
@@ -22,4 +22,4 @@ const developerSchema = new mongoose.Schema({
   }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Developer', developerSchema);
+export default mongoose.model('Developer', developerSchema);

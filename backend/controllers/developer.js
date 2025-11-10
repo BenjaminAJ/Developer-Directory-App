@@ -1,4 +1,4 @@
-const Developer = require('../models/Developer');
+import Developer from '../models/Developer.js';
 
 export const createDeveloper = async (req, res) => {
   try {

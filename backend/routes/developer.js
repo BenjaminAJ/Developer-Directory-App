@@ -1,9 +1,10 @@
-const express = require('express');
-const { createDeveloper, getDevelopers } = require('../controllers/developer');
+import express from 'express';
+import { getDevelopers, createDeveloper } from '../controllers/developer.js';
+
 const router = express.Router();
 
 router.get("/", getDevelopers);
 
 router.post("/", createDeveloper);
 
-module.exports = router;
+export default router;
