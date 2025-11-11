@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function SearchFilter({ onFilter }) {
+export default function SearchFilter({ onFilter, loading }) {
   const [role, setRole] = useState('');
   const [tech, setTech] = useState('');
 
@@ -37,14 +37,24 @@ export default function SearchFilter({ onFilter }) {
 
       <button
         onClick={handleFilter}
-        className="bg-green-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-green-700 transition focus:outline-none focus:ring-2 focus:ring-green-500"
+        disabled={loading}
+        className={`px-6 py-3 rounded-lg font-medium transition cursor-pointer ${
+          loading
+            ? 'bg-green-400 cursor-not-allowed'
+            : 'bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500'
+        } text-white`}
       >
-        Filter
+        {loading ? 'Filtering...' : 'Filter'}
       </button>
 
       <button
         onClick={handleClear}
-        className="bg-gray-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-gray-600 transition focus:outline-none focus:ring-2 focus:ring-gray-500"
+        disabled={loading}
+        className={`px-6 py-3 rounded-lg font-medium transition cursor-pointer ${
+          loading
+            ? 'bg-gray-300 cursor-not-allowed'
+            : 'bg-gray-500 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-500'
+        } text-white`}
       >
         Clear
       </button>

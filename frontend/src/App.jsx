@@ -50,7 +50,7 @@ function App() {
           </div>
 
           <div className="lg:col-span-2">
-            <SearchFilter onFilter={handleFilter} />
+            <SearchFilter onFilter={handleFilter} loading={loading} />
             {loading ? (
               <div className="flex justify-center items-center mt-8">
                 <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
