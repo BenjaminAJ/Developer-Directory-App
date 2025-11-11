@@ -41,7 +41,7 @@ Create a `.env` file in the backend directory:
 ```env
 PORT=3000
 MONGODB_URI=mongodb://localhost:27017/developer-directory
-# Or use MongoDB Atlas: mongodb+srv://username:password@cluster.mongodb.net/developer-directory
+# Or use MongoDB Atlas: mongodb+srv://<username>:<password>@cluster.mongodb.net/developer-directory
 ```
 
 Start the backend server:
