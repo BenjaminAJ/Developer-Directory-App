@@ -11,6 +11,7 @@ export default function DeveloperForm({ onAdd }) {
     techStack: '',
     experience: ''
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -29,6 +30,7 @@ export default function DeveloperForm({ onAdd }) {
       return;
     }
 
+    setLoading(true);
     try {
       await axios.post(API_URL, form);
       toast.success('Developer added successfully!');
@@ -36,6 +38,8 @@ export default function DeveloperForm({ onAdd }) {
       onAdd();
     } catch (err) {
       toast.error(err.response?.data?.message || 'Failed to add developer');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -85,9 +89,21 @@ export default function DeveloperForm({ onAdd }) {
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition"
+          disabled={loading}
+          className={`w-full py-3 rounded-lg font-medium transition cursor-pointer ${
+            loading
+              ? 'bg-blue-400 cursor-not-allowed'
+              : 'bg-blue-600 hover:bg-blue-700'
+          } text-white`}
         >
-          Add Developer
+          {loading ? (
+            <div className="flex items-center justify-center">
+              <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+              Adding...
+            </div>
+          ) : (
+            'Add Developer'
+          )}
         </button>
       </form>
     </div>
